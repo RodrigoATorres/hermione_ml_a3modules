@@ -1,0 +1,2 @@
+include README.md
+recursive-include hermione_ml_a3modules/module_templates/ *
