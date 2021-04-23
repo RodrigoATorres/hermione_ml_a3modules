@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 import re
 import os
 
-exec(open('hermione_modules/_version.py').read())
+exec(open('hermione_ml_a3modules/_version.py').read())
 
 with open('README.md', encoding='utf-8') as f:
     long_description = f.read()
@@ -31,9 +31,5 @@ setup(
     install_requires=[
 
     ],
-    entry_points='''
-        [console_scripts]
-        hermione=hermione.cli:cli
-    ''',
     python_requires='>=3.6'
 )
