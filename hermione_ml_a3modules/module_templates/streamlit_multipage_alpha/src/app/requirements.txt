@@ -1,0 +1,9 @@
+streamlit==0.79.0
+jinja2
+gspread
+Pillow
+matplotlib
+streamlit-aggrid
+boto3
+fsspec
+s3fs

@@ -1,0 +1,26 @@
+version: '2.4'
+
+services:
+  streamlit:
+    build:
+      dockerfile: ./Dockerfile_dev
+      context: ./
+    ports:
+      - '8501:8501'
+    volumes:
+      - './data:/usr/src/app/data:delegated'
+      - './streamlitapp:/usr/src/app/project:delegated'
+      - './saved_sessions:/usr/src/app/saved_sessions:delegated'
+      - './static:/usr/src/app/static:delegated'
+      - './.streamlit:/usr/src/app/.streamlit:delegated'
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1000
+      - APP_ENV=dev
+      - BUCKET_PATH=_
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_SECURITY_TOKEN=${AWS_SECURITY_TOKEN}
+      - AWS_SESSION_EXPIRATION=${AWS_SESSION_EXPIRATION}
+      - AWS_SESSION_TOKEN=${AWS_SESSION_TOKEN}
+      - AWS_VAULT=${AWS_VAULT}
